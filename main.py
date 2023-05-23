@@ -9,3 +9,7 @@ logging.info("info")
 logging.error("error")
 logging.warning("warning")
 logging.critical("critical")
+try:
+    print(10/0)
+except Exception:
+    logging.exception('gg bro')
