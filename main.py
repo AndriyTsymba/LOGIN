@@ -1,7 +1,10 @@
 # теорія
-import logging # стардатний бібліотека для логування переігу програм
-logging.basicConfig(level=logging.DEBUG, format="%(asctime)s - %(levelname)s - % (message)s")# тут викликаємо дебаг і інфо
-logging.debug("debug") # показує стардатний перебіг програми
+import logging
+logging.basicConfig(level=logging.DEBUG,
+                    filename= "logs.log",
+                    filemode= "w",
+                    format="%(asctime)s - %(levelname)s - %(message)s")
+logging.debug("debug")
 logging.info("info")
 logging.error("error")
 logging.warning("warning")
