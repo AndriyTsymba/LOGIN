@@ -1,15 +1,21 @@
+import random
 import logging
-def write_file(fill_path , data):
+logging.basicConfig(filename='info.tx11',
+                    level=logging.DEBUG,
+                    format='%(asctime)s - %(levelname)s - %(message)s')
+def generate_numbers(file_path, num_numbers):
     try:
-        with open(fill_path , "w") as file:
-            file.write(data)
+        with open(file_path, "w") as file:
+            for i in range(num_numbers):
+                random_number = random.randint(1, 10)
+                file.write(str(random_number) + '\n')
+                logging.info(f"рандомне число: {random_number}")
     except Exception as e:
-        pass
-logging.basicConfig(level = logging.DEBUG ,
-                    filename = "info.txt" ,
-                    filemode = "w" ,
-                    format = '%(asctime)s - %(levelname)s - %(message)s')
-write_file("info.txt" , input("Введіть будь що і я запиш це в кремий файл:"))
+        logging.error(f"Error: {e}")
+file_path = "numbers.txt"
+num_numbers = 2
+generate_numbers(file_path, num_numbers)
+
 
 
 
